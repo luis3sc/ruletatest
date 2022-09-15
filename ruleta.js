@@ -6,6 +6,7 @@
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           theWheel.startAnimation();
+          
       });
 
 // Validación de boton segun eventos
@@ -24,13 +25,18 @@
       // console.log(val.length);
     }
  } );*/
-  
+
+ // tamaño y altura del CANVAS
+ var canvas = document.getElementsByTagName('canvas')[0];
+ canvas.width  = 550;
+ canvas.height = 550;
+// estilos
   var theWheel = new Winwheel({
     drawMode: "image", //le permite insertar su rueda
     drawText: true, // le permite mostrar texto encima de la imagen
     canvasId: "wheel-canvas",
     numSegments: 8,
-    textFontSize: 16,
+    textFontSize: 20,
     textAlignment: "center", // posición del texto
     textMargin: 25,
     textFontFamily: "Libre Franklin",
