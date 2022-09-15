@@ -26,23 +26,19 @@
     }
  } );*/
 
- // tamaño y altura del CANVAS
- var canvas = document.getElementsByTagName('canvas')[0];
- canvas.width  = 550;
- canvas.height = 550;
 // estilos
   var theWheel = new Winwheel({
     drawMode: "image", //le permite insertar su rueda
     drawText: true, // le permite mostrar texto encima de la imagen
     canvasId: "wheel-canvas",
     numSegments: 8,
-    textFontSize: 20,
+    textFontSize: 15,
     textAlignment: "center", // posición del texto
-    textMargin: 25,
+    textMargin: 20,
     textFontFamily: "Libre Franklin",
     // posición de la rueda debajo del texto
-    centerX: 262,
-    centerY: 263,
+    centerX: 175,
+    centerY: 175,
     lineWidth: "1", // eliminar lineas
     // Defina segmentos que incluyan color y texto.
     segments: [
@@ -83,15 +79,6 @@
   
   // Inserta tu ruleta
   
-  var wheelImg = new Image();
-  wheelImg.src =
-    "./img/wheel.png";
-  // wheelImg.src = "/assets/img/wheel.png";
-  wheelImg.onload = function () {
-    theWheel.wheelImage = wheelImg;
-    theWheel.draw();
-  };
-  
   // mostrar premio y enviar datos
   function alertPrize(indicatedSegment) {
     var winningSegment = theWheel.getIndicatedSegment();
@@ -107,41 +94,6 @@
     // alert("Ваш приз: " + winningSegment.text + "!");
   }
   
-  // Llamar ajax
-  function sendDataWheel(phone, prize_seg, name) {
-    var err = true;
-    var txt = "";
-    //alert(site + ' ' + ref);
-    //alert(phone + " " + prize);
-    $.ajax({
-      url: "https://xn----7sbba0cdggx4gg2ah.xn--p1ai/mail-wheel.php", // ESPECIFICAR URL
-      dataType: "json", // tipo de datos cargados
-      type: "POST",
-      data: {
-        task: "send_data_wheel",
-        type: "Wheel",
-        phone: phone,
-        name: name,
-        prize: prize_seg.text
-      },
-      timeout: 10000,
-  
-      success: function (data) {
-        // colgamos nuestro controlador en la función success
-        err = false;
-        if (data && data.is_err == 0 && data.alr == 0) {
-          $(".prize__text").html(prize_seg.desc_text);
-        } else if (data && data.alr == 1) {
-          if (!data.alr_text) {
-            data.alr_text = "";
-          }
-          $(".prize__text").html(
-            "Номер уже участвовал ранее.<br>" + data.alr_text
-          );
-        }
-      }
-    });
-  }
   
   // valid mask phone
   $(document).ready(function () {

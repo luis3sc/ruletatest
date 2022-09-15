@@ -8,7 +8,6 @@
 		box-sizing: border-box;
 }
 body{
-  
   width: 100%;
   height: 100%;
 }
@@ -30,14 +29,8 @@ body{
 }
 .container {
 	margin: auto;
-	max-width: 1200px;
 	/*padding: 0 20px;*/
 }
-.img-responsive{
-	display: block;
-	max-width: 100%;
-	height: auto;
-} 
 	/* Large Devices, Wide Screens */
 @media only screen and (min-width : 720px) {
   .wheel-fortune{
@@ -55,9 +48,8 @@ body{
 .wheel-box {
 /*  grid-column: 1/2;*/
 /*   width: 500px; */
-/*   height: 300px; */
-  padding: 38px 78px;
-  max-width: 695px;
+/*   height: 300px; 
+  padding: 38px 78px;*/
   background-image: url(./img/fondo-rl.png);
 /*   background-image: url(/assets/img/left.png); */
   background-repeat: no-repeat;
@@ -67,10 +59,12 @@ body{
   position: relative;
 }
 .canvas-container{
-  background-image: url();
+  background-image: url(./img/wheel.png);
   background-repeat: no-repeat;  
   background-position: center;
-  background-repeat: no-repeat;
+  background-size: contain;
+  width: 350px;
+  margin: auto;
 }
 /*
 .wheel-box__canvas{
@@ -78,9 +72,10 @@ body{
   height: 525px;
 }*/
 .wheel-box__marker{
-      position: absolute;
-    top: 40%;
-    right: 0;;
+  position: absolute;
+  top: 40%;
+  width: 60px;
+  right: 0;
 }
 .wheel-text {
   background-color: #3f0009;
