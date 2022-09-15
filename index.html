@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+  
+
+
+    <div class="container">
+      <div class="wheel-fortune grid">
+        <div class="wheel-box">
+          <div class="canvas-container">
+            <canvas id='wheel-canvas' class="wheel-box__canvas" width="535" height="525"><p>Ваш браузер не поддерживает колесо.</p></canvas>
+    <img src="img/marker.png" alt="" class="wheel-box__marker img-responsive">   
+          </div>
+       </div>
+        <form class="wheel-text flex" method="post" name="google-sheet" id="google-sheet" autocomplete="off">
+          <img class="imglogo" src="./img/laruletalogo.png" alt="">
+          <p class="wheel-text__title">
+            ¡PRUEBA TU SUERTE!</p>
+          <p class="wheel-text__text">¡GIRA LA RUEDA DE LA SUERTE Y OBTÉN UN REGALO AL HACER EL PEDIDO!</p>
+          <input  name="Nombre" required type="text" class="wheel-text__input wheel-text__name" placeholder="Su nombre">
+          <input name="mobile" required  type="text" class="wheel-text__input wheel-text__phone" placeholder="Su número de teléfono">
+          <input name="Dni" id="email" class="wheel-text__input" type="number" placeholder="Escribe tu DNI" required>
+            
+          <select name="Plan" required class="wheel-text__input" id="">
+            <option value="Not Selected">Selecciona tu plan</option>
+            <option value="Internet Fibra Óptica">Internet Fibra Óptica</option>
+            <option value="2 Play | Internet + Cable Avanzado">2 Play | Internet + Cable Avanzado</option>
+            <option value="2 Play | Internet + Cable Superior">2 Play | Internet + Cable Superior</option>
+            <option value="Cable">Cable</option>
+          </select>
+          <button type="submit" id="wheel-submit"  class="wheel-btn">GIRAR AHORA</button> 
+          <label class="wheel-text__label-check checked" for="check-law">
+            <input type="checkbox" name="check-law" value="a" class="wheel-text__check"> 
+            Al hacer clic en este botón, aceptas 
+            <a href="#"> las reglas del sitio</a> 
+          </label>
+          
+        
+          <div class="prize grid gap2" style="display: none;">
+            <p class="prize__title">¡Felicidades! ganaste</p>
+            <h3 class="prize__text" class="c-modal-card__title text-center"></h3>
+            <p class="prize__sub"> Nos comunicaremos con usted en breve con Usted e informar las condiciones de la promoción</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  <script src="https://cdn.rawgit.com/zarocknz/javascript-winwheel/2.6/Winwheel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="ruleta.js"></script>
+</body>
+</html>
